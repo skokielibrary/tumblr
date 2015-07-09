@@ -1,0 +1,17 @@
+{
+  "name": "skokielibrary.tumblr.com",
+  "version": "1.0.0",
+  "description": "Tumblr theme for the Skokie Public Library.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tumblr"
+  ],
+  "author": "Skokie Public Library",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp-sass": "^2.0.3"
+  }
+}
