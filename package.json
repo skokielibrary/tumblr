@@ -12,6 +12,10 @@
   "author": "Skokie Public Library",
   "license": "MIT",
   "devDependencies": {
-    "gulp-sass": "^2.0.3"
+    "gulp-sass": "^2.0.3",
+    "browser-sync": "^2.7.13",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-minify-css": "^1.2.0",
+    "gulp-inline-source": "^2.0.0"
   }
 }
