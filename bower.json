@@ -1,0 +1,22 @@
+{
+  "name": "skokielibrary.tumblr.com",
+  "version": "1.0.0",
+  "authors": [
+    "Skokie Public Library"
+  ],
+  "description": "Tumblr theme for the Skokie Public Library",
+  "keywords": [
+    "tumblr"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-scss": "~3.0.3"
+  }
+}
