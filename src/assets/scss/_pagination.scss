@@ -1,0 +1,28 @@
+.pagination{
+  padding: 2rem 0;
+  background: $gray;
+  overflow: hidden;
+
+  .pager{
+    display: block;
+    padding: 1rem 1.5rem;
+    background: $white;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $brand;
+    transition: all .2s ease;
+
+    &:hover{
+      background: darken($white, 40%);
+      color: $white;
+    }
+
+    &.newer{
+      float: left;
+    }
+
+    &.older{
+      float: right;
+    }
+  }
+}
