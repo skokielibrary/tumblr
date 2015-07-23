@@ -1,4 +1,11 @@
 .site-footer{
   padding: 4rem 0;
   text-align: center;
+
+  .logo{
+
+    svg{
+      fill: $brand;
+    }
+  }
 }

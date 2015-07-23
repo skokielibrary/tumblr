@@ -1,11 +1,14 @@
-$brand: #D60073;
+$brand: #00A66E;
 $black: #4A4A4A;
 $white: #fff;
-$gray: #D8D8D8;
+$gray: #ccc;
+$facebook: #3b5998;
+$twitter: #55acee;
 $base-font: 'Lato', 'Avenir Next', 'Century Gothic', sans-serif;
 
 body{
   font-family: $base-font;
+  line-height: 1.6;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -16,6 +19,11 @@ h1, h2, h3, h4, h5, h6{
 .container{
   position: relative;
   width: 90%;
-  max-width: 35rem;
+  max-width: 31.25rem;
   margin: auto;
+}
+
+.hidden{
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
 }

@@ -14,10 +14,11 @@
     </div>
   </header>
   <main role="main" class="content">
+
     <!--text post-->
     <article class="post text">
       <div class="container">
-        <h1>Under the Cover Review: Uncaged</h1>
+        <h1><a href="#">Under the Cover Review: Uncaged</a></h1>
         <figure class="post-image">
           <img src="http://www.syndetics.com/index.php?isbn=9780385753067/MC.gif&client=skopl&type=hw7">
         </figure>
@@ -29,9 +30,20 @@
         <div class="meta">
           <div class="post-date">7/7/2015</div>
           <div class="share">
-            <img src="assets/img/share.svg">
+            <button class="share-button">
+              <img src="assets/img/share.svg">
+            </button>
+            <ul class="share-controls">
+              <li><a href="#" class="facebook">F</a></li>
+              <li><a href="#" class="twitter">T</a></li>
+              <li><a href="#" class="reblog">E</a></li>
+            </ul>
           </div>
         </div>
+        <ul class="tags">
+          <li><a href="#">tag1</a></li>
+          <li><a href="#">tag2</a></li>
+        </ul>
       </div>
     </article>
 
@@ -40,13 +52,25 @@
       <div class="container">
         <figure class="post-image">
           <img src="assets/img/posts/natalie-richards.jpg">
+          <figcaption>Natalie Richards visited the library.</figcaption>
         </figure>
         <div class="meta">
           <div class="post-date">7/7/2015</div>
           <div class="share">
-            <img src="assets/img/share.svg">
+            <button class="share-button">
+              <img src="assets/img/share.svg">
+            </button>
+            <ul class="share-controls">
+              <li><a href="#" class="facebook">F</a></li>
+              <li><a href="#" class="twitter">T</a></li>
+              <li><a href="#" class="reblog">E</a></li>
+            </ul>
           </div>
         </div>
+        <ul class="tags">
+          <li><a href="#">tag1</a></li>
+          <li><a href="#">tag2</a></li>
+        </ul>
       </div>
     </article>
 
@@ -60,23 +84,14 @@
         <div class="meta">
           <div class="post-date">7/7/2015</div>
           <div class="share">
-            <img src="assets/img/share.svg">
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <!--quote post-->
-    <article class="post quote">
-      <div class="container">
-        <blockquote>
-          <p>It's better to quote than to be quoted.</p>
-          <cite>Unknown (because it's made up)</cite>
-        </blockquote>
-        <div class="meta">
-          <div class="post-date">7/7/2015</div>
-          <div class="share">
-            <img src="assets/img/share.svg">
+            <button class="share-button">
+              <img src="assets/img/share.svg">
+            </button>
+            <ul class="share-controls">
+              <li><a href="#" class="facebook">F</a></li>
+              <li><a href="#" class="twitter">T</a></li>
+              <li><a href="#" class="reblog">E</a></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -89,7 +104,14 @@
         <div class="meta">
           <div class="post-date">7/7/2015</div>
           <div class="share">
-            <img src="assets/img/share.svg">
+            <button class="share-button">
+              <img src="assets/img/share.svg">
+            </button>
+            <ul class="share-controls">
+              <li><a href="#" class="facebook">F</a></li>
+              <li><a href="#" class="twitter">T</a></li>
+              <li><a href="#" class="reblog">E</a></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -108,5 +130,22 @@
       </a>
     </div>
   </footer>
+  <script>
+    (function(){
+      var share_controls, share_buttons, button;
+      share_buttons = document.getElementsByClassName('share-button');
+      for (i = 0; i < share_buttons.length; i++){
+        button = share_buttons[i];
+        button.addEventListener('click', function(){
+          share_controls = this.nextSibling;
+          while(share_controls && share_controls.nodeType !== 1) {
+            share_controls = share_controls.nextSibling;
+          }
+          share_controls.classList.toggle('visible')
+          this.classList.toggle('active');
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

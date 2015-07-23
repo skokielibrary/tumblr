@@ -12,29 +12,51 @@
     margin-top: .5rem;
     font-size: 1.125rem;
     text-transform: uppercase;
+    color: $brand;
+
+    a{
+      color: inherit;
+      text-decoration: none;
+    }
   }
-}
 
-.post-image{
-  margin: 0;
+  a{
+    color: $brand;
+  }
 
-  img{
-    max-width: 100%;
-    height: auto;
+  figure{
+    margin: 0;
+
+    img{
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .caption{
+    margin-top: .5rem;
   }
 }
 
 .text{
 
-  .post-image{
-    float: left;
-    width: 26%;
-    margin: 0 1rem 1rem 0;
-  }
-
   .body-text{
-    float: left;
-    width: 70%;
+
+    figure{
+      float: left;
+      width: 26%;
+      margin: 0 1rem 1rem 0;
+      line-height: 1;
+    }
+  }
+}
+
+.photo{
+
+  .photoset{
+    img{
+      margin-bottom: .5rem;
+    }
   }
 }
 
@@ -43,14 +65,27 @@
 
   blockquote{
     margin: 0;
-    padding: 2.5rem 0;
+    padding: 2.5rem 0 2rem 0;
+    line-height: 1.2;
     font-weight: 300;
     color: $white;
     overflow: hidden;
 
-    p{
+    div{
       margin: .5rem 0;
-      font-size: 3rem;
+
+      &.long{
+        font-size: 1.5rem;
+      }
+
+      &.medium{
+        font-size: 2rem;
+      }
+
+      &.short{
+        font-size: 2.5rem;
+      }
+
     }
 
     cite{
@@ -65,24 +100,35 @@
       color: $brand;
     }
   }
+
 }
 
-.meta{
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: table;
-  padding: 0 .5rem;
-  background: $brand;
+.audio{
 
-  .post-date{
-    display: table-cell;
-    padding: .5rem;
-    color: $white;
+  .audio-player{
+    max-width: 100%;
+    height: auto;
+
+    iframe{
+      width: 100%;
+      height: auto;
+    }
   }
+}
 
-  .share{
-    display: table-cell;
-    padding: .5rem;
+.video-player{
+  position: relative;
+  padding-top: 1.5625rem;
+  padding-bottom: 67.5%;
+  height: 0;
+  margin-bottom: 1rem;
+  overflow: hidden;
+
+  iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 }

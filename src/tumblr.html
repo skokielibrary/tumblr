@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{block:PostTitle}{PostTitle} | {/block:PostTitle}{Title}</title>
+  {block:Description}<meta name="description" content="{MetaDescription}">{/block:Description}
+  <meta property="og:title" content="{Title}">
+  {block:PostSummary}<meta property="og:description" content="{PostSummary}">{/block:PostSummary}
+  <meta property="og:site_name" content="Skokie Public Library's Tumblr">
+  <meta property="og:type" content="website">
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,400italic' rel='stylesheet' type='text/css'>
+  <link href="assets/css/styles.css" rel="stylesheet" inline>
+</head>
+<body>
+  <header role="banner" class="site-header">
+    <div class="container">
+      <a href="/" class="brand">Skokie Public Library</a>
+    </div>
+  </header>
+  <main role="main" class="content">
+    {block:Posts}
+      <article class="post {PostType}">
+        <div class="container">
+
+          {block:Text}
+            {block:Title}
+              <h1><a href="{Permalink}">{Title}</a></h1>
+              {block:Body}
+              <div class="body-text">
+                {Body}
+                {block:More}
+                  <p><a href="{Permalink}">Read more</a></p>
+                {/block:More}
+              </div>
+              {/block:Body}
+            {/block:Title}
+          {/block:Text}
+
+          {block:Quote}
+            <blockquote>
+              <div class="{Length}">{Quote}</div>
+              {block:Source}
+                <cite>{Source}</cite>
+              {/block:Source}
+            </blockquote>
+          {/block:Quote}
+
+          {block:Link}
+            <h1><a href="{URL}" {Target}>{Name}</a></h1>
+            {block:Description}
+              <div class="caption">{Description}</div>
+            {/block:Description}
+          {/block:Link}
+
+          {block:Audio}
+            {block:AlbumArt}
+              <img src="{AlbumArtURL}" alt="">
+            {/block:AlbumArt}
+            <div class="audio-player">
+              {block:AudioEmbed}
+                {AudioEmbed color="white"}
+              {/block:AudioEmbed}
+              {block:AudioPlayer}{AudioPlayerBlack}{/block:AudioPlayer}
+            </div>
+            {block:Caption}
+              <div class="caption">{Caption}</div>
+            {/block:Caption}
+          {/block:Audio}
+
+          {block:Photo}
+            <figure class="post-image{block:HighRes} high-res{/block:HighRes}{block:Caption} with-caption{/block:Caption}" data-photo-width="{PhotoWidth-HighRes}">
+              {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}">{LinkCloseTag}
+              {block:Caption}
+                <figcaption class="caption">{Caption}</figcaption>
+              {/block:Caption}
+            </figure>
+          {/block:Photo}
+
+          {block:Photoset}
+            <figure class="photoset{block:Caption} with-caption"{/block:Caption}>
+              {block:Photos}
+                <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>
+                {block:Caption}
+                  <div class="caption">{Caption}</div>
+                {/block:Caption}
+              {/block:Photos}
+              {block:Caption}
+                <figcaption class="caption">{Caption}</figcaption>
+              {/block:Caption}
+            </figure>
+          {/block:Photoset}
+
+          {block:Panorama}
+            <figure{block:Caption} class="with-caption"{/block:Caption}>
+              {LinkOpenTag}<img src="{PhotoURL-Panorama}" width="{PhotoWidth-Panorama}" height="{PhotoHeight-Panorama}" alt="{PhotoAlt}" />{LinkCloseTag}
+              {block:Caption}
+                <figcaption class="caption">{Caption}</figcaption>
+              {/block:Caption}
+            </figure>
+          {/block:Panorama}
+
+          {block:Video}
+            <figure{block:Caption} class="with-caption"{/block:Caption}>
+              <div class="video-player">
+                  {Video-700}
+              </div>
+              {block:Caption}
+                <figcaption class="caption">{Caption}</figcaption>
+              {/block:Caption}
+            </figure>
+          {/block:Video}
+
+          {block:Chat}
+            {block:Title}
+              <h1>{Title}</h1>
+            {/block:Title}
+            <ul class="conversation">
+              {block:Lines}
+              <li class="line {Alt}">
+                {block:Label}<span class="person">{Label}</span>{/block:Label}
+                <span class="person-said">{Line}</span>
+              </li>
+              {/block:Lines}
+            </ul>
+          {/block:Chat}
+
+          {block:Answer}
+            <section class="question">
+              <img src="{AskerPortraitURL-48}">
+              <div class="asker">{Asker} asked:</div>
+              <div class="asker-question">
+                {Question}
+              </div>
+            </section>
+            {block:Answerer}
+              <section class="answerer">
+                <img src="{AnswererPortraitURL-48}">
+                <p>{Answerer} answered:</p>
+                <div class="answerer-answer">
+                  {Answer}
+                </div>
+              </section>
+            {/block:Answerer}
+            <div class="replies">{Replies}</div>
+          {/block:Answer}
+          <div class="meta">
+            {block:Date}
+              {block:NewDayDate}
+                <p class="post-date">{MonthNumber}/{DayOfMonth}/{Year}</p>
+              {/block:NewDayDate}
+              {block:SameDayDate}
+                <p class="post-date">{MonthNumber}/{DayOfMonth}/{Year}</p>
+              {/block:SameDayDate}
+            {/block:Date}
+            <div class="share">
+              <button class="share-button">
+                <img inline src="assets/svg/share.svg">
+              </button>
+              <ul class="share-controls">
+                <li><a data-target="facebook"  href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]={permaLink}" target="_blank" class="social facebook"><img inline src="/assets/svg/facebook.svg"><span class="social hidden">Facebook</span></a></li>
+                <li><a data-target="twitter" href="https://twitter.com/share?url={permaLink}&text=Look%20what%20I%20found%20on%20Skokie Public%20Library's%20Tumblr" target="_blank" class="twitter"><img inline src="/assets/svg/twitter.svg"><span class="hidden">Twitter</span></a></li>
+                <li><a href="{Permalink}" class="permalink"><img inline src="/assets/svg/link.svg"><span class="hidden">Link</span></a></li>
+              </ul>
+            </div>
+          </div><!--end of meta-->
+          <div class="post-footer">
+            {LikeButton color="grey"}
+            {ReblogButton color="grey"}
+
+            {block:HasTags}
+              <ul class="tags">
+                {block:Tags}
+                  <li><a href="{TagURL}">{Tag}</a>
+                  </li>
+                {/block:Tags}
+              </ul>
+            {/block:HasTags}
+          </div>
+        </div><!--end of article container-->
+      </article>
+    {/block:Posts}
+    <div class="pagination">
+      <div class="container">
+
+        {block:PermalinkPagination}
+          {block:PreviousPost}<a class="pager newer"href="{PreviousPost}">{lang:Previous post}</a>{/block:PreviousPost}
+          {block:NextPost}<a class="pager older" href="{NextPost}">{lang:Next post}</a>{/block:NextPost}
+        {/block:PermalinkPagination}
+
+        {block:Pagination}
+          {block:PreviousPage}<a class="pager newer" href="{PreviousPage}">{lang:Previous}</a>{/block:PreviousPage}
+          {block:NextPage}<a class="pager older" href="{NextPage}">{lang:Next}</a>{/block:NextPage}
+        {/block:Pagination}
+
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <a href="http://skokielibrary.info" class="logo">
+        <img inline src="/assets/svg/logo-stamp.svg">
+      </a>
+    </div>
+  </footer>
+  <script>
+    (function(){
+      var share_controls, share_buttons, button;
+      share_buttons = document.getElementsByClassName('share-button');
+      for (i = 0; i < share_buttons.length; i++){
+        button = share_buttons[i];
+        button.addEventListener('click', function(){
+          share_controls = this.nextSibling;
+          while(share_controls && share_controls.nodeType !== 1) {
+            share_controls = share_controls.nextSibling;
+          }
+          share_controls.classList.toggle('visible')
+          this.classList.toggle('active');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -21,13 +21,13 @@ gulp.task('sass', function () {
     .pipe(autoprefixer({browsers: ['last 2 versions'],cascade: false}))
     .pipe(minifycss())
     .pipe(gulp.dest(config.css_path))
-    .pipe(browserSync.reload({stream:true}))
 });
 
 gulp.task('inlinesource', function () {
     return gulp.src('./src/*.html')
         .pipe(inlinesource())
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulp.dest('./dist'))
+        .pipe(browserSync.reload({stream:true}))
 });
 
 
@@ -53,7 +53,9 @@ gulp.task('browser-sync-reload', function(){
 //watch sass for changes
 gulp.task('watch', function() {
   gulp.watch('src/assets/scss/*.scss', ['sass', 'inlinesource']);
-  gulp.watch('dist/**/*.html', ['browser-sync-reload']);
+  gulp.watch('src/**/*.html', ['inlinesource']);
 });
 
-gulp.task('default', ['sass', 'inlinesource', 'watch', 'browser-sync']);
+gulp.task('build', ['sass', 'inlinesource']);
+
+gulp.task('default', ['sass', 'inlinesource', 'watch']);
