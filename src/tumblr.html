@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{block:PostTitle}{PostTitle} | {/block:PostTitle}{Title}</title>
   {block:Description}<meta name="description" content="{MetaDescription}">{/block:Description}
+  <link rel="apple-touch-icon" href="{PortraitURL-128}">
+  <link rel="shortcut icon" href="{Favicon}">
   <meta property="og:title" content="{Title}">
   {block:PostSummary}<meta property="og:description" content="{PostSummary}">{/block:PostSummary}
   <meta property="og:site_name" content="Skokie Public Library's Tumblr">
@@ -14,11 +16,13 @@
   <link href="assets/css/styles.css" rel="stylesheet" inline>
 </head>
 <body>
+
   <header role="banner" class="site-header">
     <div class="container">
       <a href="/" class="brand">Skokie Public Library</a>
     </div>
   </header>
+
   <main role="main" class="content">
     {block:Posts}
       <article class="post {PostType}">
@@ -145,29 +149,30 @@
             {/block:Answerer}
             <div class="replies">{Replies}</div>
           {/block:Answer}
-          <div class="meta">
-            {block:Date}
-              {block:NewDayDate}
-                <p class="post-date">{MonthNumber}/{DayOfMonth}/{Year}</p>
-              {/block:NewDayDate}
-              {block:SameDayDate}
-                <p class="post-date">{MonthNumber}/{DayOfMonth}/{Year}</p>
-              {/block:SameDayDate}
-            {/block:Date}
-            <div class="share">
-              <button class="share-button">
-                <img inline src="assets/svg/share.svg">
-              </button>
-              <ul class="share-controls">
-                <li><a data-target="facebook"  href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]={permaLink}" target="_blank" class="social facebook"><img inline src="/assets/svg/facebook.svg"><span class="social hidden">Facebook</span></a></li>
-                <li><a data-target="twitter" href="https://twitter.com/share?url={permaLink}&text=Look%20what%20I%20found%20on%20Skokie Public%20Library's%20Tumblr" target="_blank" class="twitter"><img inline src="/assets/svg/twitter.svg"><span class="hidden">Twitter</span></a></li>
-                <li><a href="{Permalink}" class="permalink"><img inline src="/assets/svg/link.svg"><span class="hidden">Link</span></a></li>
-              </ul>
-            </div>
-          </div><!--end of meta-->
-          <div class="post-footer">
+
+          <div class="share">
+            <button class="share-button">
+              <img inline src="assets/svg/share.svg">
+            </button>
+            <ul class="share-controls">
+              <li><a data-target="facebook"  href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]={permaLink}" target="_blank" class="social facebook"><img inline src="/assets/svg/facebook.svg"><span class="social hidden">Facebook</span></a></li>
+              <li><a data-target="twitter" href="https://twitter.com/share?url={permaLink}&text=Look%20what%20I%20found%20on%20Skokie Public%20Library's%20Tumblr" target="_blank" class="twitter"><img inline src="/assets/svg/twitter.svg"><span class="hidden">Twitter</span></a></li>
+              <li><a href="{Permalink}" class="permalink"><img inline src="/assets/svg/link.svg"><span class="hidden">Link</span></a></li>
+            </ul>
+          </div><!--end of share-->
+
+          <section class="meta">
             {LikeButton color="grey"}
             {ReblogButton color="grey"}
+
+            {block:Date}
+              {block:NewDayDate}
+                <div class="post-date">{MonthNumber}/{DayOfMonth}/{Year}</div>
+              {/block:NewDayDate}
+              {block:SameDayDate}
+                <div class="post-date">{MonthNumber}/{DayOfMonth}/{Year}</div>
+              {/block:SameDayDate}
+            {/block:Date}
 
             {block:HasTags}
               <ul class="tags">
@@ -177,26 +182,37 @@
                 {/block:Tags}
               </ul>
             {/block:HasTags}
-          </div>
+          </section><!--end of meta-->
+
+          {block:PostNotes}
+            {PostNotes-16}
+          {/block:PostNotes}
+
         </div><!--end of article container-->
+
       </article>
     {/block:Posts}
-    <div class="pagination">
-      <div class="container">
 
-        {block:PermalinkPagination}
-          {block:PreviousPost}<a class="pager newer"href="{PreviousPost}">{lang:Previous post}</a>{/block:PreviousPost}
-          {block:NextPost}<a class="pager older" href="{NextPost}">{lang:Next post}</a>{/block:NextPost}
-        {/block:PermalinkPagination}
-
-        {block:Pagination}
-          {block:PreviousPage}<a class="pager newer" href="{PreviousPage}">{lang:Previous}</a>{/block:PreviousPage}
-          {block:NextPage}<a class="pager older" href="{NextPage}">{lang:Next}</a>{/block:NextPage}
-        {/block:Pagination}
-
+    {block:PermalinkPagination}
+      <div class="pagination">
+        <div class="container">
+        {block:PreviousPost}<a class="pager newer"href="{PreviousPost}">{lang:Previous post}</a>{/block:PreviousPost}
+        {block:NextPost}<a class="pager older" href="{NextPost}">{lang:Next post}</a>{/block:NextPost}
+        </div>
       </div>
-    </div>
+    {/block:PermalinkPagination}
+
+    {block:Pagination}
+      <div class="pagination">
+        <div class="container">
+        {block:PreviousPage}<a class="pager newer" href="{PreviousPage}">{lang:Previous}</a>{/block:PreviousPage}
+        {block:NextPage}<a class="pager older" href="{NextPage}">{lang:Next}</a>{/block:NextPage}
+        </div>
+      </div>
+    {/block:Pagination}
+
   </main>
+
   <footer class="site-footer">
     <div class="container">
       <a href="http://skokielibrary.info" class="logo">
@@ -204,6 +220,7 @@
       </a>
     </div>
   </footer>
+
   <script>
     (function(){
       var share_controls, share_buttons, button;
