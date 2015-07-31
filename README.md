@@ -6,10 +6,6 @@ It's a Tumblr theme for the Skokie Public Library.
 
 It's not too bad. It's clean and simple.
 
-## Can I use it?
-
-Yep, it's MIT licensed.
-
 ## How do I use it?
 
 Install [node.js](https://nodejs.org/download/)
