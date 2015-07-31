@@ -1,98 +1,46 @@
 .meta{
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: table;
-  border-right: .5rem solid $brand;
-  border-left: .5rem solid $brand;
+  overflow: hidden;
+}
 
-  .post-date{
-    display: table-cell;
-    padding: .5rem;
-    color: $white;
-    background: $brand;
-  }
-
-  .share{
-    position: relative;
-    display: table-cell;
-    cursor: pointer;
-      background: $brand;
-
-    .share-button{
-      padding: .5rem;
-      border: 0;
-      background: none;
-      transition: all .2s ease;
-
-      &.active{
-        transform: rotate(90deg);
-      }
-    }
-  }
-
-  .share-controls{
-    position: absolute;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-
-    a{
-      display: block;
-      height: 2rem;
-      width: 2rem;
-      margin-top: .5rem;
-      background: $gray;
-      border-radius: 50%;
-      text-align: center;
-      color: $black;
-      text-decoration: none;
-      visibility: hidden;
-      opacity: 0;
-
-      &.facebook{
-        background: $facebook;
-        color: $white;
-      }
-
-      &.twitter{
-        background: $twitter;
-        color: $white;
-      }
-
-      svg{
-        fill: $white;
-        vertical-align: middle;
-      }
-    }
-
-    &.visible li:nth-of-type(1) a{
-      animation-delay: 0;
-    }
-
-    &.visible li:nth-of-type(2) a{
-      animation-delay: .1s;
-    }
-
-    &.visible li:nth-of-type(3) a{
-      animation-delay: .2s;
-    }
-
-    &.visible li a{
-      visibility: visible;
-      animation: cascade .2s ease-out forwards;
-    }
+.quote{
+  .meta{
+    padding-bottom: 1rem;
   }
 }
 
-@keyframes cascade{
-  0%{
-    opacity: 0;
-    transform: scale(.1);
-  }
-  100%{
-    opacity: 1;
-    transform: scale(1);
+.like_button, .post-date, .reblog_button{
+  display: inline-block !important;
+  margin-right: 1rem;
+  line-height: 1;
+  vertical-align: middle;
+
+}
+
+.post-date{
+  display: inline-block;
+  margin-right: 1rem;
+  color: $gray;
+}
+
+.tags{
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+
+  li{
+    display: inline-block;
+    margin-bottom: .5rem;
+    margin-right: .5rem;
+    padding: 4px;
+    background-color: lighten($gray, 15%);
+
+    a{
+      display: block;
+      color: darken($gray, 30%);
+      font-size: .6875rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
   }
 }

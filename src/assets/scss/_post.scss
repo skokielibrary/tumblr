@@ -8,8 +8,8 @@
   }
 
   h1{
-    width: 70%;
-    margin-top: .5rem;
+    width: 80%;
+    margin: .1875rem 0 2rem;
     font-size: 1.125rem;
     text-transform: uppercase;
     color: $brand;
@@ -25,7 +25,7 @@
   }
 
   figure{
-    margin: 0;
+    text-align: center;
 
     img{
       max-width: 100%;
@@ -33,8 +33,9 @@
     }
   }
 
-  .caption{
+  .caption, figcaption{
     margin-top: .5rem;
+    text-align: left;
   }
 }
 
@@ -43,15 +44,23 @@
   .body-text{
 
     figure{
-      float: left;
-      width: 26%;
-      margin: 0 1rem 1rem 0;
+      margin: 1rem 0;
       line-height: 1;
+      text-align: center;
+    }
+
+    p img{
+      display: block;
+      margin: .5rem auto;
     }
   }
 }
 
 .photo{
+
+  figure{
+    margin: .1875rem 0 0;
+  }
 
   .photoset{
     img{
@@ -66,7 +75,7 @@
   blockquote{
     margin: 0;
     padding: 2.5rem 0 2rem 0;
-    line-height: 1.2;
+    line-height: 1.3;
     font-weight: 300;
     color: $white;
     overflow: hidden;
@@ -116,19 +125,26 @@
   }
 }
 
-.video-player{
-  position: relative;
-  padding-top: 1.5625rem;
-  padding-bottom: 67.5%;
-  height: 0;
-  margin-bottom: 1rem;
-  overflow: hidden;
-
-  iframe{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.video{
+  figure{
+    margin: 0;
   }
+
+  .video-player{
+    position: relative;
+    padding-top: 1.5625rem;
+    padding-bottom: 67.5%;
+    height: 0;
+    margin-bottom: 1rem;
+    overflow: hidden;
+
+    iframe{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
 }
