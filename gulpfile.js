@@ -58,4 +58,4 @@ gulp.task('watch', function() {
 
 gulp.task('build', ['sass', 'inlinesource']);
 
-gulp.task('default', ['sass', 'inlinesource', 'watch']);
+gulp.task('default', ['sass', 'inlinesource', 'watch', 'browser-sync']);
