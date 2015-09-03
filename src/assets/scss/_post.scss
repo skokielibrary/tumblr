@@ -25,6 +25,7 @@
   }
 
   figure{
+    position: relative;
     text-align: center;
 
     img{
@@ -147,4 +148,37 @@
     }
   }
 
+}
+
+.link{
+
+  .link-preview{
+    background: lighten($gray, 15%);
+
+    figure{
+      margin: .1875rem 0 0;
+
+      figcaption{
+        position: absolute;
+        top: 0;
+        left: 0;
+        max-width: 60%;
+        margin: 0;
+        padding: .5rem;
+        background: lighten($gray, 15%);
+        font-size: .875rem;
+      }
+    }
+
+    h1{
+      margin: 0;
+      padding: 1rem;
+    }
+  }
+
+  .has-thumbnail{
+    h1{
+      width: 100%;
+    }
+  }
 }

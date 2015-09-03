@@ -52,7 +52,19 @@
           {/block:Quote}
 
           {block:Link}
-            <h1><a href="{URL}" {Target}>{Name}</a></h1>
+            <div class="link-preview{block:Thumbnail} has-thumbnail{/block:Thumbnail}">
+              {block:Thumbnail}
+                <figure>
+                  <img src="{Thumbnail}" alt="{Name}">
+                  {block:Host}
+                    <figcaption>
+                      {Host}
+                    </figcaption>
+                  {/block:Host}
+                </figure>
+              {/block:Thumbnail}
+              <h1><a href="{URL}" {Target}>{Name}</a></h1>
+            </div>
             {block:Description}
               <div class="caption">{Description}</div>
             {/block:Description}
@@ -60,7 +72,7 @@
 
           {block:Audio}
             {block:AlbumArt}
-              <img src="{AlbumArtURL}" alt="">
+              <img src="{AlbumArtURL}" alt="Album cover art">
             {/block:AlbumArt}
             <div class="audio-player">
               {block:AudioEmbed}

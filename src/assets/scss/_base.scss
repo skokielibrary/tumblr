@@ -6,6 +6,10 @@ $facebook: #3b5998;
 $twitter: #55acee;
 $base-font: 'Lato', 'Avenir Next', 'Century Gothic', sans-serif;
 
+*, *:before, *:after{
+  box-sizing: border-box;
+}
+
 body{
   font-family: $base-font;
   line-height: 1.6;
